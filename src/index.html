@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
+  <script src="./game.js"></script>
+  <script src="./markers.js"></script>
+
   <script>
+    const Markers = LoadMarkers();
+    const markersElements = Markers.load();
+
+    window.onload = () => {
+      const sceneElement = document.getElementById("scene");
+      sceneElement.appendChild(markersElements);
+    };
+
     AFRAME.registerComponent("registerevents", {
       init: function () {
         var marker = this.el;
 
         marker.addEventListener("markerFound", function () {
           var markerId = marker.id;
+
+          if (game.validateLetter(markerId)) {
+            game.addLetter(markerId);
+          } else {
+            console.log(
+              "Letra errada. Você informou a letra: " +
+                markerId +
+                ". Informe outra letra"
+            );
+          }
           console.log("markerFound", markerId);
-          // TODO: Add your own code here to react to the marker being found.
         });
 
         marker.addEventListener("markerLost", function () {
@@ -23,14 +45,37 @@
       },
     });
   </script>
+
+  <script>
+    const game = createGame("abc");
+  </script>
   <body style="margin: 0px; overflow: hidden;">
-    <a-scene embedded arjs>
-      <a-marker
-        registerevents
-        type="pattern"
-        url="https://raw.githubusercontent.com/fatecodes/swe3-ar-literacy/master/src/utils/alphabet/Markers/pattern-o.patt"
-      ></a-marker>
+    <a-scene id="scene" embedded arjs>
+      <a-assets>
+        <img
+          id="my-image"
+          crossorigin="anonymous"
+          src="https://raw.githubusercontent.com/fatecodes/swe3-ar-literacy/master/src/images/animals/zebra.png"
+        />
+      </a-assets>
+
+      <a-image
+        width="3"
+        height="1.5"
+        position="0 1.5 -2"
+        src="#my-image"
+      ></a-image>
+
       <a-entity camera></a-entity>
+
+      <!--
+      <a-sphere
+        id="overlay"
+        radius="2"
+        material="opacity:0.8; color: black; side: back"
+      >
+      </a-sphere>
+      -->
     </a-scene>
   </body>
 </html>
