@@ -52,21 +52,45 @@
   <body style="margin: 0px; overflow: hidden;">
     <a-scene id="scene" embedded arjs>
       <a-assets>
-        <img
-          id="my-image"
-          crossorigin="anonymous"
-          src="https://raw.githubusercontent.com/fatecodes/swe3-ar-literacy/master/src/images/animals/zebra.png"
-        />
+        <img id="zebra" src="./images/animals/zebra.png" />
+        <img id="gato" src="./images/animals/gato.png" />
       </a-assets>
-
-      <a-image
-        width="3"
-        height="1.5"
-        position="0 1.5 -2"
-        src="#my-image"
-      ></a-image>
-
-      <a-entity camera></a-entity>
+      <a-camera>
+        <a-text
+          position="-1 1 -4"
+          rotation="0 0 0"
+          value="Selecione um animal"
+        ></a-text>
+        <a-plane
+          position="0 0 -4"
+          rotation="0 0 0"
+          width="1"
+          height="1"
+          src="#zebra"
+        ></a-plane>
+        <a-plane
+          position="1 0 -4"
+          rotation="0 0 0"
+          width="1"
+          height="1"
+          src="#gato"
+        ></a-plane>
+        <a-plane
+          position="-1 0 -4"
+          rotation="0 0 0"
+          width="1"
+          height="1"
+          src="#gato"
+        ></a-plane>
+        <!--
+          <a-entity
+            geometry="primitive: box; width: 0.2;height: 0.2;segmentsHeight: 2;"
+            material="src:#my-image;side:back"
+            id="photosphere"
+          >
+          </a-entity>
+          -->
+      </a-camera>
 
       <!--
       <a-sphere
