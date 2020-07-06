@@ -14,6 +14,7 @@ function createGame(animal) {
   }
 
   function validateWord() {
+    console.log(state);
     const wordStr = state.word.join("");
     return wordStr == state.animal;
   }

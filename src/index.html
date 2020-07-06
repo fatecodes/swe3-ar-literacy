@@ -6,100 +6,47 @@
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-  <script src="./game.js"></script>
-  <script src="./markers.js"></script>
-
-  <script>
-    const Markers = LoadMarkers();
-    const markersElements = Markers.load();
-
-    window.onload = () => {
-      const sceneElement = document.getElementById("scene");
-      sceneElement.appendChild(markersElements);
-    };
-
-    AFRAME.registerComponent("registerevents", {
-      init: function () {
-        var marker = this.el;
-
-        marker.addEventListener("markerFound", function () {
-          var markerId = marker.id;
-
-          if (game.validateLetter(markerId)) {
-            game.addLetter(markerId);
-          } else {
-            console.log(
-              "Letra errada. Você informou a letra: " +
-                markerId +
-                ". Informe outra letra"
-            );
-          }
-          console.log("markerFound", markerId);
-        });
-
-        marker.addEventListener("markerLost", function () {
-          var markerId = marker.id;
-          console.log("markerLost", markerId);
-          // TODO: Add your own code here to react to the marker being lost.
-        });
-      },
-    });
-  </script>
-
-  <script>
-    const game = createGame("abc");
-  </script>
   <body style="margin: 0px; overflow: hidden;">
     <a-scene id="scene" embedded arjs>
       <a-assets>
-        <img id="zebra" src="./images/animals/zebra.png" />
+        <img id="urso" src="./images/animals/urso.png" />
         <img id="gato" src="./images/animals/gato.png" />
+
+        <img id="hit" src="./images/animals/check_on.png" />
+        <img id="err" src="./images/animals/check_off.png" />
+        <img id="defaultStatus" src="./images/animals/clear.png" />
       </a-assets>
       <a-camera>
         <a-text
-          position="-1 1 -4"
+          position="-1.2 1.7 -6"
           rotation="0 0 0"
-          value="Selecione um animal"
+          value=""
+          id="animalText"
         ></a-text>
         <a-plane
-          position="0 0 -4"
+          position="-1.7 1.7 -6"
           rotation="0 0 0"
           width="1"
           height="1"
-          src="#zebra"
+          src=""
+          id="animal"
         ></a-plane>
         <a-plane
-          position="1 0 -4"
+          position="-1.7 -1.7 -6"
           rotation="0 0 0"
           width="1"
           height="1"
-          src="#gato"
+          src="#defaultStatus"
+          id="letterStatus"
         ></a-plane>
-        <a-plane
-          position="-1 0 -4"
-          rotation="0 0 0"
-          width="1"
-          height="1"
-          src="#gato"
-        ></a-plane>
-        <!--
-          <a-entity
-            geometry="primitive: box; width: 0.2;height: 0.2;segmentsHeight: 2;"
-            material="src:#my-image;side:back"
-            id="photosphere"
-          >
-          </a-entity>
-          -->
       </a-camera>
-
-      <!--
-      <a-sphere
-        id="overlay"
-        radius="2"
-        material="opacity:0.8; color: black; side: back"
-      >
-      </a-sphere>
-      -->
     </a-scene>
   </body>
+
+  <script src="vendors/face-api.min.js"></script>
+
+  <script src="./game.js"></script>
+  <script src="./markers.js"></script>
+  <script src="index.js"></script>
+  <script src="faceExpression.js"></script>
 </html>
