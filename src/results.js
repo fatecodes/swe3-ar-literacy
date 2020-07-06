@@ -41,7 +41,11 @@
   function calculateExpressions() {
     let expressions = localStorage.getItem("expressions");
 
-    if (!expressions) return;
+    if (!expressions) {
+      const elementCard = generateCard("Não houveram expressões", null);
+      resultsElement.appendChild(elementCard);
+      return;
+    }
 
     expressions = JSON.parse(expressions);
 
