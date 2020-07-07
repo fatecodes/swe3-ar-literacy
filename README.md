@@ -21,4 +21,15 @@ This README would normally document whatever steps are necessary to get your app
 * Giuliano Araujo Bertoti
 
 ### Images ###
+### Menu ###
 ![Menu](https://github.com/fatecodes/swe3-ar-literacy/blob/master/src/images/1.png?raw=true)
+### Face Detection ###
+![Menu](https://github.com/fatecodes/swe3-ar-literacy/blob/master/src/images/2.png?raw=true)
+### Hit ###
+![Menu](https://github.com/fatecodes/swe3-ar-literacy/blob/master/src/images/3.png?raw=true)
+### Hit ###
+![Menu](https://github.com/fatecodes/swe3-ar-literacy/blob/master/src/images/4.png?raw=true)
+### Error ###
+![Menu](https://github.com/fatecodes/swe3-ar-literacy/blob/master/src/images/5.png?raw=true)
+### Face Expression Report ###
+![Menu](https://github.com/fatecodes/swe3-ar-literacy/blob/master/src/images/6.png?raw=true)
