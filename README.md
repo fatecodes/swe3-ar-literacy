@@ -19,3 +19,6 @@ This README would normally document whatever steps are necessary to get your app
 ### Adviser ###
 
 * Giuliano Araujo Bertoti
+
+### Images ###
+![Menu](https://github.com/fatecodes/swe3-ar-literacy/blob/master/src/images/1.png?raw=true)
