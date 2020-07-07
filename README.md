@@ -11,6 +11,10 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Contributors ###
 
-* Adrian Wesley
-* Caique Fernandes
-* Daniel Pestana
+* Adrian Wesley - RA: 1460481821001
+* Caique Fernandes - RA: 1460481821013
+* Daniel Pestana - RA: 1460481821015
+
+### Adviser ###
+
+* Giuliano Araujo Bertoti
