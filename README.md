@@ -20,7 +20,7 @@ This README would normally document whatever steps are necessary to get your app
 
 * Giuliano Araujo Bertoti
 
-### Images ###
+## Images ##
 ### Menu ###
 ![Menu](https://github.com/fatecodes/swe3-ar-literacy/blob/master/src/images/1.png?raw=true)
 ### Face Detection ###
