@@ -4,7 +4,7 @@ window.onload = () => {
 
 function handleBtn(animal) {
   setAnimal(animal);
-  window.location.href = `${window.location.origin}/index.html`;
+  window.location = "index.html";
 }
 
 function setAnimal(animal) {

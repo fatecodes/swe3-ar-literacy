@@ -43,19 +43,18 @@ function markerFound(markerElement) {
     changeLetterStatus(false);
     console.log(
       "Letra errada. Você informou a letra: " +
-        markerId +
-        ". Informe outra letra"
+      markerId +
+      ". Informe outra letra"
     );
   }
 
   if (game.validateWord()) {
-    window.location.href = `${window.location.origin}/results.html`;
+    window.location = "results.html";
   }
 }
 
 function markerLost(markerElement) {
   const markerId = markerElement.id;
-  console.log("markerLost", markerId);
 }
 
 function addLetterAnimalText(letter) {
